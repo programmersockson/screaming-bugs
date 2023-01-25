@@ -12,8 +12,8 @@ The bugs are blind, they move by "hearing" until they find a resource, then they
 
 The scouts walk without reacting to "cry", but if they find a resource, they carry it to the queen.
 
-The queen is always shifted towards the farthest resource. Each turn, based on the availability of resources, she decides to create a new insect or prolong her life.
+The queen is always shifted towards the farthest resource. Each turn, based on the availability of resources, she decides to create a new bug or prolong her life.
 
 Complications:
 
-Resources move, so the insects change their angle a little every turn, and everyone's speed is a little different. The queen shifts towards the farthest resource.
+Resources move, so the bugs change their angle a little every turn, and everyone's speed is a little different. The queen shifts towards the farthest resource.
