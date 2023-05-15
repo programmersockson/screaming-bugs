@@ -12,7 +12,7 @@ class Bug:
         self.position = np.array([randrange(50, WIDTH_CONST - 50), randrange(50, HEIGHT_CONST - 50)], dtype=float)  # cluster within an area
         self.angle = uniform(0, 2 * np.pi)
         self.velocity = uniform(BUG_VELOCITY_MIN, BUG_VELOCITY_MAX)
-        self.health = HEALTH + randrange(-HEALTH//5, HEALTH//5)
+        self.health = HEALTH + randrange(-HEALTH//2, HEALTH//2)
         self.red = 0
         self.green = 0
         self.blue = 0
@@ -30,7 +30,7 @@ class Bug:
                 bug.position[1] = self.position[1]
                 bug.angle = uniform(0, 2 * np.pi)
                 bug.velocity = uniform(BUG_VELOCITY_MIN, BUG_VELOCITY_MAX)
-                bug.health = HEALTH + randrange(-HEALTH//5, HEALTH//5)
+                bug.health = HEALTH + randrange(-HEALTH//2, HEALTH//2)
                 bug.red = 0
                 bug.green = 0
                 bug.blue = 0
@@ -90,7 +90,7 @@ class Bug:
             self.green -= 1
             self.blue -= 1
 
-            if self.health <= (HEALTH + HEALTH//5 - 50) and randrange(100) > 90:
+            if self.health <= HEALTH and randrange(100) > 90:
                 self.health += 50
             else:
                 self.reproduce(bugs)
@@ -108,22 +108,22 @@ class Bug:
                 st = self.state
 
                 # coronation
-                if self.distQ > ESTIMATED_DISTANCE and randrange(1000) > 960:
-                    self.state = cl + 5  # same color as absorbed
-                    if cl == 1:
-                        self.red += resource.stock
-                    elif cl == 2:
-                        self.green += resource.stock
-                    elif cl == 3:
-                        self.blue += resource.stock
-                    resource.resurrect()
-                    self.velocity = QUEEN_VELOCITY  # constant for queen
-                    self.red = QUEEN_STOCK
-                    self.green = QUEEN_STOCK
-                    self.blue = QUEEN_STOCK
-                    self.health = HEALTH + HEALTH//5
-                    # print('New queen!') # debugging
-                    return None  # it's queen now
+                # if self.distQ > ESTIMATED_DISTANCE and randrange(1000) > 960:
+                #     self.state = cl + 5  # same color as absorbed
+                #     if cl == 1:
+                #         self.red += resource.stock
+                #     elif cl == 2:
+                #         self.green += resource.stock
+                #     elif cl == 3:
+                #         self.blue += resource.stock
+                #     resource.resurrect()
+                #     self.velocity = QUEEN_VELOCITY  # constant for queen
+                #     self.red = QUEEN_STOCK
+                #     self.green = QUEEN_STOCK
+                #     self.blue = QUEEN_STOCK
+                #     self.health = HEALTH // 3  # weak after transformation
+                #     print('New queen!')  # debugging
+                #     return None  # it's queen now
 
                 if cl == 1:  # red
                     self.distR = 0
