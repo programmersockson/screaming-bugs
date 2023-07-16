@@ -1,8 +1,6 @@
 # screaming-bugs
 
-![image](https://user-images.githubusercontent.com/88203669/214677852-89e85992-ceb0-448e-8a3e-9cfe0e9bdefb.png)
-
-Extended version:
+https://github.com/programmersockson/screaming-bugs/assets/88203669/469cbd9e-e0ca-4458-ad29-be251b0487c9
 
 There are 3 types of resources: red, green, blue, 3 types of bugs respectively, as well as a queen and scouts.
 
@@ -12,8 +10,4 @@ The bugs are blind, they move by "hearing" until they find a resource, then they
 
 The scouts walk without reacting to "cry", but if they find a resource, they carry it to the queen.
 
-The queen is always shifted towards the farthest resource. Each turn, based on the availability of resources, she decides to create a new bug or prolong her life.
-
-Complications:
-
-Resources move, so the bugs change their angle a little every turn, and everyone's speed is a little different. The queen shifts towards the farthest resource.
+Each step, based on the availability of resources, the queen decides to create a new bug or prolong her life.
